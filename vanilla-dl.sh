@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Version 1.8.8
+wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8.8/minecraft_server.1.8.8.jar -O vanilla-1.8.8.jar --no-check-certificate
+wget http://repo.advantageservers.com/conf/vanilla-1.8.8.jar.conf --no-check-certificate
+
 # Version 1.8.7
 wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8.7/minecraft_server.1.8.7.jar -O vanilla-1.8.7.jar --no-check-certificate
 wget http://repo.advantageservers.com/conf/vanilla-1.8.7.jar.conf --no-check-certificate
