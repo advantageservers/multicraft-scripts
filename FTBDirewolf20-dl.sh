@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## declare an array variable
-versions=("1.4.1" "1.5.0")
+versions=("1.4.1" "1.5.0" "1.6.1")
 
 ## now loop through the above array
 for version in "${versions[@]}"
