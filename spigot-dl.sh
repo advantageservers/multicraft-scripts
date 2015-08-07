@@ -1,45 +1,14 @@
 #!/bin/bash
 
-# Version 1.8.8
-wget http://repo.advantageservers.com/jars/spigot-1.8.8.jar -O spigot-1.8.8.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.8.8.jar.conf --no-check-certificate
+## declare an array variable
+versions=("1.8.8" "1.8.7" "1.8.6" "1.8.5" "1.8.4" "1.8.3" "1.8.0" "1.7.10" "1.7.9" "1.7.5" "1.7.2")
 
-# Version 1.8.7
-wget http://repo.advantageservers.com/jars/spigot-1.8.7.jar -O spigot-1.8.7.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.8.7.jar.conf --no-check-certificate
-
-# Version 1.8.6
-wget http://repo.advantageservers.com/jars/spigot-1.8.6.jar -O spigot-1.8.6.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.8.6.jar.conf --no-check-certificate
-
-# Version 1.8.5
-wget http://repo.advantageservers.com/jars/spigot-1.8.5.jar -O spigot-1.8.5.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.8.5.jar.conf --no-check-certificate
-
-# Version 1.8.4
-wget http://repo.advantageservers.com/jars/spigot-1.8.4.jar -O spigot-1.8.4.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.8.4.jar.conf --no-check-certificate
-
-# Version 1.8.3
-wget http://repo.advantageservers.com/jars/spigot-1.8.3.jar -O spigot-1.8.3.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.8.3.jar.conf --no-check-certificate
-
-# Version 1.8.0
-wget http://repo.advantageservers.com/jars/spigot-1.8.0.jar -O spigot-1.8.0.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.8.0.jar.conf --no-check-certificate
-
-# Version 1.7.10
-wget http://repo.advantageservers.com/jars/spigot-1.7.10.jar -O spigot-1.7.10.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.7.10.jar.conf --no-check-certificate
-
-# Version 1.7.9
-wget http://repo.advantageservers.com/jars/spigot-1.7.9.jar -O spigot-1.7.9.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.7.9.jar.conf --no-check-certificate
-
-# Version 1.7.5
-wget http://repo.advantageservers.com/jars/spigot-1.7.5.jar -O spigot-1.7.5.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.7.5.jar.conf --no-check-certificate
-
-# Version 1.7.2
-wget http://repo.advantageservers.com/jars/spigot-1.7.2.jar -O spigot-1.7.2.jar --no-check-certificate
-wget http://repo.advantageservers.com/conf/spigot-1.7.2.jar.conf --no-check-certificate
+## now loop through the above array
+for version in "${versions[@]}"
+do
+    wget http://repo.advantageservers.com/jars/spigot-"$version".jar -O spigot-"$version".jar --no-check-certificate
+    wget http://repo.advantageservers.com/conf/spigot-"$version".jar.conf --no-check-certificate
+    chmod +x spigot-"$version".jar.conf spigot-"$version".jar
+    chown multicraft:multicraft spigot-"$version".jar.conf spigot-"$version".jar
+    # or do whatever with individual element of the array
+done
